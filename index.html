@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire pour la Création de la Boutique en Ligne</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        header {
+            background: #282c34;
+            color: #61dafb;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #444;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        .main-content {
+            display: flex;
+            flex: 1;
+            margin: 20px;
+            justify-content: center;
+            gap: 20px;
+        }
+        .form-container {
+            width: 97%;
+            max-width: 1500px;
+            background: #2c2f36;
+            border-radius: 8px;
+            border: 1px solid #444;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            overflow: auto;
+        }
+        .sidebar {
+            width: 300px;
+            background: #2c2f36;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #444;
+            box-shadow: -5px 0 10px rgba(0, 0, 0, 0.5);
+        }
+        h2 {
+            color: #61dafb;
+            border-bottom: 2px solid #444;
+            padding-bottom: 10px;
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+        }
+        h2 i {
+            margin-right: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 20px;
+        }
+        strong {
+            color: #e0e0e0;
+            font-size: 18px;
+            display: inline-block;
+        }
+        .explanation {
+            display: none;
+            margin-top: 10px;
+            font-style: italic;
+            color: #b0b0b0;
+        }
+        .show-explanation {
+            color: #61dafb;
+            cursor: pointer;
+            margin-left: 10px;
+            font-size: 16px;
+        }
+        input[type="text"], textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #444;
+            border-radius: 4px;
+            background: #3b3b3b;
+            color: #e0e0e0;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 80px;
+        }
+        .AmitSahoo45-button-3 {
+            position: relative;
+            padding: 10px 20px;
+            border-radius: 7px;
+            border: 1px solid rgb(61, 106, 255);
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 2px;
+            background: transparent;
+            color: #fff;
+            overflow: hidden;
+            box-shadow: 0 0 0 0 transparent;
+            transition: all 0.2s ease-in;
+        }
+
+        .AmitSahoo45-button-3:hover {
+            background: rgb(61, 106, 255);
+            box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
+            transition: all 0.2s ease-out;
+        }
+
+        .AmitSahoo45-button-3:hover::before {
+            animation: sh02 0.5s 0s linear;
+        }
+
+        .AmitSahoo45-button-3::before {
+            content: '';
+            display: block;
+            width: 0px;
+            height: 86%;
+            position: absolute;
+            top: 7%;
+            left: 0%;
+            opacity: 0;
+            background: #fff;
+            box-shadow: 0 0 50px 30px #fff;
+            transform: skewX(-20deg);
+        }
+
+        @keyframes sh02 {
+            from {
+                opacity: 0;
+                left: 0%;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+                left: 100%;
+            }
+        }
+
+        .AmitSahoo45-button-3:active {
+            box-shadow: 0 0 0 0 transparent;
+            transition: box-shadow 0.2s ease-in;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Questionnaire pour la Création de la Boutique en Ligne</h1>
+    </header>
+    <div class="main-content">
+        <form id="questionnaire-form">
+            <div class="form-container">
+                <!-- Section Détails du Projet -->
+                <h2><i class="fas fa-question-circle"></i> Détails de votre projet</h2>
+                <ul>
+                    <li>
+                        <strong>Quel type de produits allez-vous vendre ?</strong>
+                        <span class="show-explanation" onclick="toggleExplanation('explanation1')">ℹ️</span>
+                        <textarea name="type-produit" placeholder="Ex. : vêtements, accessoires, etc."></textarea>
+                        <p id="explanation1" class="explanation">Pensez aux produits spécifiques que vous souhaitez vendre.</p>
+                    </li>
+                    <li>
+                        <strong>Quel est votre public cible ?</strong>
+                        <span class="show-explanation" onclick="toggleExplanation('explanation2')">ℹ️</span>
+                        <textarea name="public-cible" placeholder="Ex. : jeunes adultes, amateurs de sport, etc."></textarea>
+                        <p id="explanation2" class="explanation">Il est important de savoir qui sont vos clients potentiels.</p>
+                    </li>
+                    <li>
+                        <strong>Quel est le style visuel de votre boutique ?</strong>
+                        <span class="show-explanation" onclick="toggleExplanation('explanation3')">ℹ️</span>
+                        <textarea name="style-visuel" placeholder="Ex. : minimaliste, coloré, moderne"></textarea>
+                        <p id="explanation3" class="explanation">Décrivez le style que vous souhaitez pour votre site web.</p>
+                    </li>
+                    <li>
+                        <strong>Quels sont vos objectifs principaux avec cette boutique en ligne ?</strong>
+                        <span class="show-explanation" onclick="toggleExplanation('explanation4')">ℹ️</span>
+                        <textarea name="objectifs" placeholder="Ex. : augmenter les ventes, améliorer la notoriété de la marque"></textarea>
+                        <p id="explanation4" class="explanation">Déterminez ce que vous souhaitez accomplir avec votre boutique.</p>
+                    </li>
+                    <li>
+                        <strong>Quel style de design préférez-vous pour les boutons ?</strong>
+                        <span class="show-explanation" onclick="toggleExplanation('explanation5')">ℹ️</span>
+                        <textarea name="style-boutons" placeholder="Ex. : design minimaliste, couleurs pastel"></textarea>
+                        <p id="explanation5" class="explanation">Indique le style que tu préfères pour que le design corresponde à ton image de marque.</p>
+                    </li>
+                    <li>
+                        <strong>Comment veux-tu structurer les catégories de produits ?</strong> (par type de produit, par collection, etc.)
+                        <span class="show-explanation" onclick="toggleExplanation('explanation6')">ℹ️</span>
+                        <textarea name="structure-categories" placeholder="Ex. : par types de vêtements, par saison"></textarea>
+                        <p id="explanation6" class="explanation">La structure des catégories aide les clients à trouver rapidement ce qu'ils cherchent. Pense à comment tu veux organiser ça.</p>
+                    </li>
+                </ul>
+
+                <!-- Section Type de Produits à Vendre -->
+                <section>
+                    <h2><i class="icon">📦</i> Type de produits à vendre</h2>
+                    <ul>
+                        <li>
+                            <strong>Quel type de produits veux-tu vendre ?</strong>
+                            <textarea name="produits-types" placeholder="Ex. : vêtements, gadgets, ebooks, consultations"></textarea>
+                            <p class="explanation">Est-ce que tu penses vendre des objets physiques, des produits numériques, ou des services ? Ça m'aidera à structurer la boutique de la bonne manière.</p>
+                        </li>
+                        <li>
+                            <strong>As-tu déjà une gamme de produits définie ou es-tu encore en train de chercher ?</strong>
+                            <textarea name="gamme-produits" placeholder="Ex. : vêtements pour enfants, logiciels de comptabilité"></textarea>
+                            <p class="explanation">Dis-moi si tu as déjà choisi les produits ou si tu es encore en train de faire des recherches. Cela influencera l'organisation de la boutique.</p>
+                        </li>
+                        <li>
+                            <strong>Veux-tu offrir des produits personnalisables ?</strong> Si oui, comment penses-tu faire la personnalisation ?
+                            <textarea name="produits-personnalisables" placeholder="Ex. : ajouter des noms sur des t-shirts"></textarea>
+                            <p class="explanation">Si tu veux que les clients personnalisent leurs produits, il faudra mettre en place des options pour ça sur le site.</p>
+                        </li>
+                        <li>
+                            <strong>Quels critères de qualité veux-tu mettre en avant pour tes produits ?</strong>
+                            <textarea name="criteres-qualite" placeholder="Ex. : matériaux écologiques, fabrication artisanale"></textarea>
+                            <p class="explanation">Qu'est-ce qui rendra tes produits uniques ? Mets en avant les aspects qui les différencient sur le marché.</p>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Section Structure et Design du Site -->
+                <section>
+                    <h2><i class="icon">🎨</i> Structure et design du site</h2>
+                    <ul>
+                        <li>
+                            <strong>As-tu des préférences pour le design du site ?</strong> (simple, coloré, moderne, classique)
+                            <textarea name="design-preference" placeholder="Ex. : design épuré, avec des couleurs vives"></textarea>
+                            <p class="explanation">Quel style de design préfères-tu pour le site ? Ça pourrait être simple et moderne, ou plus coloré et dynamique.</p>
+                        </li>
+                        <li>
+                            <strong>Y a-t-il des sites que tu trouves inspirants pour le design ?</strong>
+                            <textarea name="exemples-sites" placeholder="Liste des sites que tu aimes"></textarea>
+                            <p class="explanation">Si tu as des sites que tu trouves beaux ou efficaces, partage-les avec moi pour que je puisse m’en inspirer.</p>
+                        </li>
+                        <li>
+                            <strong>Quelle expérience utilisateur (UX) souhaites-tu offrir ?</strong>
+                            <textarea name="experience-utilisateur" placeholder="Ex. : navigation fluide, processus de commande simple"></textarea>
+                            <p class="explanation">Comment veux-tu que tes clients se sentent en utilisant le site ? Ça peut inclure une navigation facile ou un processus de commande rapide.</p>
+                        </li>
+                        <li>
+                            <strong>Quels éléments de branding veux-tu mettre en avant ?</strong> (logo, couleurs, typographie)
+                            <textarea name="elements-branding" placeholder="Ex. : logo en haut à gauche, couleurs de la marque"></textarea>
+                            <p class="explanation">Comment veux-tu que ton identité de marque apparaisse sur le site ? Auras-tu un logo, des couleurs spécifiques, ou une police particulière ?</p>
+                        </li>
+                        <li>
+                            <strong>Auras-tu besoin de sections comme un blog, une FAQ, ou une page d'avis clients ?</strong>
+                            <textarea name="sections-specifiques" placeholder="Liste des sections souhaitées"></textarea>
+                            <p class="explanation">Des pages supplémentaires comme un blog, une FAQ ou des avis clients peuvent ajouter de la valeur. Les souhaites-tu pour ton site ?</p>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Section Moyens de Paiement -->
+                <section>
+                    <h2><i class="icon">💳</i> Moyens de paiement</h2>
+                    <ul>
+                        <li>
+                            <strong>Quels moyens de paiement veux-tu proposer ?</strong> (cartes bancaires, PayPal, virements)
+                            <textarea name="moyens-paiement" placeholder="Ex. : cartes de crédit, PayPal"></textarea>
+                            <p class="explanation">Quels modes de paiement souhaites-tu offrir à tes clients ? Cela peut inclure des cartes de crédit, PayPal, ou autres options.</p>
+                        </li>
+                        <li>
+                            <strong>As-tu besoin d'une intégration avec une solution de paiement spécifique ?</strong>
+                            <textarea name="integration-paiement" placeholder="Indique la solution de paiement souhaitée"></textarea>
+                            <p class="explanation">Si tu as des accords avec une solution de paiement particulière, indique-la ici pour que je puisse l’intégrer correctement.</p>
+                        </li>
+                        <li>
+                            <strong>Veux-tu proposer des options de paiement en plusieurs fois ?</strong>
+                            <textarea name="paiement-en-plusieurs-fois" placeholder="Indique les options souhaitées"></textarea>
+                            <p class="explanation">Souhaites-tu offrir des facilités de paiement, comme des paiements échelonnés ou en plusieurs fois ?</p>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Section Livraisons et Expéditions -->
+                <section>
+                    <h2><i class="icon">📦</i> Livraisons et expéditions</h2>
+                    <ul>
+                        <li>
+                            <strong>Quels types de livraison souhaites-tu proposer ?</strong> (standard, express, international)
+                            <textarea name="types-livraison" placeholder="Ex. : livraison standard, express, internationale"></textarea>
+                            <p class="explanation">Quels types de livraison veux-tu offrir ? Cela peut inclure des options nationales et internationales.</p>
+                        </li>
+                        <li>
+                            <strong>As-tu des préférences pour les partenaires de livraison ?</strong>
+                            <textarea name="partenaires-livraison" placeholder="Ex. : La Poste, UPS, DHL"></textarea>
+                            <p class="explanation">Si tu as des préférences pour des services de livraison particuliers, fais-le moi savoir.</p>
+                        </li>
+                        <li>
+                            <strong>Veux-tu proposer des options de livraison gratuite ?</strong> Si oui, sous quelles conditions ?
+                            <textarea name="livraison-gratuite" placeholder="Ex. : pour les commandes au-dessus de 50€"></textarea>
+                            <p class="explanation">Si tu souhaites offrir la livraison gratuite, spécifie les conditions ou les seuils requis.</p>
+                        </li>
+                        <li>
+                            <strong>Comment veux-tu gérer les retours et échanges ?</strong>
+                            <textarea name="retours-echanges" placeholder="Ex. : politique de retour sous 14 jours, frais de retour à la charge du client"></textarea>
+                            <p class="explanation">Décris la politique de retour et d'échange que tu souhaites mettre en place pour les clients.</p>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Section SEO et Marketing -->
+                <section>
+                    <h2><i class="icon">🔍</i> SEO et marketing</h2>
+                    <ul>
+                        <li>
+                            <strong>As-tu des objectifs spécifiques en termes de SEO ?</strong> (référencement local, international, etc.)
+                            <textarea name="objectifs-seo" placeholder="Ex. : améliorer le référencement local, attirer des clients internationaux"></textarea>
+                            <p class="explanation">Si tu as des objectifs précis pour le SEO, indique-les pour que le site soit optimisé en conséquence.</p>
+                        </li>
+                        <li>
+                            <strong>Quels canaux de marketing envisages-tu ?</strong> (réseaux sociaux, email marketing, publicité en ligne)
+                            <textarea name="canaux-marketing" placeholder="Ex. : Facebook, Instagram, Google Ads"></textarea>
+                            <p class="explanation">Quels moyens de marketing comptes-tu utiliser pour promouvoir ta boutique ?</p>
+                        </li>
+                        <li>
+                            <strong>Veux-tu intégrer des outils d’analyse et de suivi ?</strong> (Google Analytics, outils de suivi des conversions)
+                            <textarea name="outils-analyse" placeholder="Ex. : Google Analytics, outils de suivi des conversions"></textarea>
+                            <p class="explanation">Indique si tu souhaites intégrer des outils pour suivre les performances et analyser les données du site.</p>
+                        </li>
+                        <li>
+                            <strong>As-tu des mots-clés spécifiques pour le SEO ?</strong>
+                            <textarea name="mots-cles-seo" placeholder="Liste des mots-clés ciblés"></textarea>
+                            <p class="explanation">Définis les mots-clés importants pour ton site afin de cibler les bonnes audiences dans les moteurs de recherche.</p>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Section Suivi et Maintenance -->
+                <section>
+                    <h2><i class="icon">🛠️</i> Suivi et maintenance</h2>
+                    <ul>
+                        <li>
+                            <strong>Quelle est la fréquence de mise à jour souhaitée pour le site ?</strong> (mensuelle, trimestrielle, etc.)
+                            <textarea name="frequence-mise-a-jour" placeholder="Ex. : mise à jour mensuelle, trimestrielle"></textarea>
+                            <p class="explanation">À quelle fréquence souhaites-tu que le site soit mis à jour ?</p>
+                        </li>
+                        <li>
+                            <strong>As-tu besoin d'une formation pour gérer le site ?</strong>
+                            <textarea name="formation-gestion-site" placeholder="Ex. : formation sur le CMS utilisé"></textarea>
+                            <p class="explanation">Si tu as besoin de formation pour gérer le site toi-même, indique-le ici.</p>
+                        </li>
+                        <li>
+                            <strong>Veux-tu des options pour la sauvegarde automatique des données ?</strong>
+                            <textarea name="sauvegarde-donnees" placeholder="Ex. : sauvegardes quotidiennes, hebdomadaires"></textarea>
+                            <p class="explanation">La sauvegarde automatique peut aider à protéger les données en cas de problème.</p>
+                        </li>
+                        <li>
+                            <strong>As-tu des préférences pour le support technique ?</strong> (réponse rapide, support en ligne, etc.)
+                            <textarea name="support-technique" placeholder="Ex. : support en ligne, réponse rapide"></textarea>
+                            <p class="explanation">Décris le type de support technique que tu souhaites pour résoudre les problèmes éventuels.</p>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Section Légal et Conformité -->
+                <section>
+                    <h2><i class="icon">⚖️</i> Légal et conformité</h2>
+                    <ul>
+                        <li>
+                            <strong>As-tu besoin d’une politique de confidentialité ?</strong>
+                            <textarea name="politique-confidentialite" placeholder="Indique les besoins spécifiques pour la politique de confidentialité"></textarea>
+                            <p class="explanation">Une politique de confidentialité est essentielle pour informer les clients sur la gestion de leurs données personnelles.</p>
+                        </li>
+                        <li>
+                            <strong>Veux-tu ajouter des mentions légales sur le site ?</strong>
+                            <textarea name="mentions-legales" placeholder="Ex. : mentions légales spécifiques selon la législation locale"></textarea>
+                            <p class="explanation">Les mentions légales sont souvent nécessaires pour se conformer aux réglementations locales.</p>
+                        </li>
+                        <li>
+                            <strong>As-tu besoin de formulaires de consentement pour les cookies ?</strong>
+                            <textarea name="formulaires-cookies" placeholder="Ex. : formulaire de consentement pour les cookies"></textarea>
+                            <p class="explanation">Les formulaires de consentement sont nécessaires pour le respect de la législation sur les cookies.</p>
+                        </li>
+                        <li>
+                            <strong>Y a-t-il des exigences spécifiques concernant les droits de propriété intellectuelle ?</strong>
+                            <textarea name="droits-propriete-intellectuelle" placeholder="Ex. : droits d'auteur, marques déposées"></textarea>
+                            <p class="explanation">Assure-toi de respecter les droits de propriété intellectuelle et les marques déposées dans ton contenu.</p>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Section Soumettre -->
+                <section>
+                    <input type="submit" value="Envoyer le formulaire">
+                </section>
+            </div>
+        </form>
+        <div class="sidebar">
+            <h2><i class="fas fa-info-circle"></i> Instructions</h2>
+            <p>Remplissez ce formulaire en fournissant autant de détails que possible.</p>
+            <p>Cliquez sur le bouton "Envoyer les réponses" lorsque vous avez terminé.</p>
+        </div>
+    </div>
+
+    <script>
+
+        
+        function toggleExplanation(id) {
+        var explanation = document.getElementById(id);
+        explanation.style.display = explanation.style.display === "none" ? "block" : "none";
+    }
+
+    function generateTextFile(data) {
+        let text = '';
+        for (const [key, value] of Object.entries(data)) {
+            text += `[${key}]\n${value}\n\n`;
+        }
+        return new Blob([text], { type: 'text/plain' });
+    }
+
+    async function sendToDiscord() {
+        const formElement = document.querySelector('#questionnaire-form');
+        const formData = new FormData(formElement);
+        let data = {};
+        for (let [key, value] of formData.entries()) {
+            data[key] = value.trim();
+        }
+
+        const textBlob = generateTextFile(data);
+        const file = new File([textBlob], "reponses.txt", { type: "text/plain" });
+
+        const webhookUrl = "https://discord.com/api/webhooks/1274012063735218310/tSNyPD_A5sIc-dM4jQSM72DDDEpIfGom32WJfissrCrC3PllAVcjYcqk1gXBwSoFP7Au";
+
+        const formDataToSend = new FormData();
+        formDataToSend.append("file", file);
+
+        try {
+            const response = await fetch(webhookUrl, {
+                method: 'POST',
+                body: formDataToSend
+            });
+
+            if (response.ok) {
+                alert("Les réponses ont été envoyées avec succès !");
+            } else {
+                alert("Une erreur s'est produite lors de l'envoi des réponses.");
+            }
+        } catch (error) {
+            alert("Une erreur s'est produite : " + error.message);
+        }
+    }
+    </script>
+</body>
+</html>
